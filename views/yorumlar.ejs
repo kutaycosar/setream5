@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10" />
+    <title>Document</title>
+    <script src="/filesaver.js"></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-sm item-list">
+          <thead style="text-align: center;" class="thead-dark">
+            <tr>
+              <th style="font-size:20pt;" scope="col">İsim</th>
+              <th style="font-size:20pt;" scope="col">Yorum</th>
+              <th style="font-size:20pt;" scope="col">Tarih</th>
+              <th style="font-size:20pt;" scope="col"></th>
+            </tr>
+          </thead>  
+          <% data.forEach(item => { %>
+            
+            <tbody>
+              <tr style="text-align: center;">
+                <td style="word-break: break-word;"><%= item.isim %></td>
+                <td style="word-break: break-word;"><%= item.yorum %></td>
+                <td ><%= item.date%></td>
+                <td ><button data-id="<%= item._id %>" class="delete-me btn btn-outline-dark btn-lg">Yorumu Sil</button></td>
+              </tr>
+            </tbody>
+            <% }) %> 
+          </table>
+      </div>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+    <script src="/browser.js"></script> 
+</body>
+</html>

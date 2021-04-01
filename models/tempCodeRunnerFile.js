@@ -1,0 +1,1 @@
+if (typeof(this.data.brans) != "string") {this.data.brans = ""}
