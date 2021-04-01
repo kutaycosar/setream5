@@ -58,6 +58,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     createField.value = ""
     createField2.value = ""
     createField.placeholder = "İsminiz"
+    createField2.placeholder = "Yorumunuz boş bırakılamaz."
     // createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
     createField2.focus()
   }
