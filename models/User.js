@@ -10,7 +10,7 @@ let User = function(data) {
 
 User.prototype.cleanUp = function() {
   if (typeof(this.data.username) != "string") {this.data.username = ""}
-  if (typeof(this.data.email) != "string") {this.data.email = ""}
+  // if (typeof(this.data.email) != "string") {this.data.email = ""}
   if (typeof(this.data.password) != "string") {this.data.password = ""}
   if (typeof(this.data.brans) != "string") {this.data.brans = ""}
   if (typeof(this.data.sehir) != "string") {this.data.sehir = ""}
@@ -19,7 +19,7 @@ User.prototype.cleanUp = function() {
   // get rid of any bogus properties
   this.data = {
     username: this.data.username.trim(),
-    email: this.data.email.trim().toLowerCase(),
+    // email: this.data.email.trim().toLowerCase(),
     password: this.data.password,
     brans: this.data.brans,
     sehir: this.data.sehir,
@@ -32,7 +32,7 @@ User.prototype.validate = function() {
   return new Promise(async (resolve, reject) => {
     if (this.data.username == "") {this.errors.push("Kullanıcı adı girmelisiniz.")}
     // if (this.data.username != "" && !validator.isAlphanumeric(this.data.username)) {this.errors.push("Kullanıcı adı sadece harf ve numara barındırabilir.")}
-    if (!validator.isEmail(this.data.email)) {this.errors.push("Geçerli bir mail adresi girmelisiniz.")}
+    // if (!validator.isEmail(this.data.email)) {this.errors.push("Geçerli bir mail adresi girmelisiniz.")}
     if (this.data.password == "") {this.errors.push("Şifre girmelisiniz.")}
     if (this.data.password.length > 0 && this.data.password.length < 8) {this.errors.push("Oluşturulan şifre en az sekiz karakterden oluşmalıdır.")}
     if (this.data.password.length > 50) {this.errors.push("Oluşturulan şifre elli karakteri geçemez.")}
@@ -46,10 +46,10 @@ User.prototype.validate = function() {
     // }
   
     // Only if email is valid then check to see if it's already taken
-    if (validator.isEmail(this.data.email)) {
-      let emailExists = await usersCollection.findOne({email: this.data.email})
-      if (emailExists) {this.errors.push("Bu e-posta adresi zaten kullanılıyor.")}
-    }
+    // if (validator.isEmail(this.data.email)) {
+    //   let emailExists = await usersCollection.findOne({email: this.data.email})
+    //   if (emailExists) {this.errors.push("Bu e-posta adresi zaten kullanılıyor.")}
+    // }
     resolve()
   })
 }
@@ -84,7 +84,7 @@ User.prototype.register = function() {
       let salt = bcrypt.genSaltSync(10)
       this.data.password = bcrypt.hashSync(this.data.password, salt)
       await usersCollection.insertOne(this.data)
-      this.getAvatar()
+      // this.getAvatar()
       resolve()
     } else {
       reject(this.errors)
@@ -92,9 +92,9 @@ User.prototype.register = function() {
   })
 }
 
-User.prototype.getAvatar = function() {
-  this.avatar = `https://gravatar.com/avatar/${md5(this.data.email)}?s=128`
-}
+// User.prototype.getAvatar = function() {
+//   this.avatar = `https://gravatar.com/avatar/${md5(this.data.email)}?s=128`
+// }
 
 
 module.exports = User

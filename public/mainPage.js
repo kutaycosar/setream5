@@ -1,9 +1,10 @@
-
+let createField = document.getElementById("create-field")
 let createField2 = document.getElementById("create-field2")
 
 let errors = []
 
 let validation = function(){
+  if (createField.value.length < 3) {errors.push("İsim ve soyisminiz 3 karakterden kısa olamaz.")}
   if (createField2.value.length < 10) {errors.push("Yorumunuz 10 karakterden uzun olmalıdır.")}
 }
 ///
@@ -41,9 +42,12 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     errors = []
     e.preventDefault()
     alertTimeoutSuccess("Yorumunuz gönderildi", 1100)
-    axios.post('/create-item', {text2: createField2.value}).then(function () {
+    axios.post('/create-item', {text: createField.value ,text2: createField2.value}).then(function () {
+      createField.value = ""
       createField2.value = ""
-      createField2.focus()
+      createField.placeholder = "İsminiz."
+      createField2.placeholder = "Sorunuz."
+      createField.focus()
       }).catch(function() {
       console.log("Please try again later.")
       })
@@ -51,7 +55,9 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     errors = []
     e.preventDefault()
     alertTimeoutFail("Gönderim başarısız." ,3000)
+    createField.value = ""
     createField2.value = ""
+    createField.placeholder = "İsim ve soyisminiz 3 karakterden kısa olamaz."
     createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
     createField2.focus()
   }

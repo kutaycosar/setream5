@@ -49,7 +49,7 @@ app.get('/yorumlar',passwordProtected, function(req,res){
 app.post('/create-item',function(req,res){
   date = new Date()
   data = {
-      isim: req.session.user.username,
+      isim: req.body.text,
       yorum: req.body.text2,
       date: date.toLocaleString()
   }
