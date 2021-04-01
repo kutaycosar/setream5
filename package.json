@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "nodemon db",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node db.js"
   },
   "keywords": [],
   "author": "",
