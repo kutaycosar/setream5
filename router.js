@@ -12,8 +12,8 @@ function passwordProtected(req, res, next){
 }
 ///
 router.get('/', userController.home)
-router.post('/register',passwordProtected, userController.register)
-router.post('/login', passwordProtected, userController.login)
+router.post('/register', userController.register)
+router.post('/login', userController.login)
 router.post('/logout', userController.logout)
 
 module.exports = router
