@@ -57,7 +57,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     alertTimeoutFail("Gönderim başarısız." ,3000)
     createField.value = ""
     createField2.value = ""
-    createField.placeholder = "İsim ve soyisminiz 3 karakterden kısa olamaz."
+    createField.placeholder = "İsminiz"
     // createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
     createField2.focus()
   }
