@@ -10,7 +10,7 @@ let User = function(data) {
 
 User.prototype.cleanUp = function() {
   if (typeof(this.data.username) != "string") {this.data.username = ""}
-  // if (typeof(this.data.email) != "string") {this.data.email = ""}
+  if (typeof(this.data.email) != "string") {this.data.email = ""}
   // if (typeof(this.data.password) != "string") {this.data.password = ""}
   if (typeof(this.data.brans) != "string") {this.data.brans = ""}
   if (typeof(this.data.sehir) != "string") {this.data.sehir = ""}
@@ -19,7 +19,7 @@ User.prototype.cleanUp = function() {
   // get rid of any bogus properties
   this.data = {
     username: this.data.username.trim(),
-    // email: this.data.email.trim().toLowerCase(),
+    email: this.data.email.trim().toLowerCase(),
     // password: this.data.password,
     brans: this.data.brans,
     sehir: this.data.sehir,
@@ -36,7 +36,7 @@ User.prototype.validate = function() {
     if (this.data.tckimlik == "") {this.errors.push("T.C. kimlik no girmelisiniz.")}
 
     // if (this.data.username != "" && !validator.isAlphanumeric(this.data.username)) {this.errors.push("Kullanıcı adı sadece harf ve numara barındırabilir.")}
-    // if (!validator.isEmail(this.data.email)) {this.errors.push("Geçerli bir mail adresi girmelisiniz.")}
+    if (!validator.isEmail(this.data.email)) {this.errors.push("Geçerli bir mail adresi girmelisiniz.")}
     // if (this.data.password == "") {this.errors.push("Şifre girmelisiniz.")}
     // if (this.data.password.length > 0 && this.data.password.length < 8) {this.errors.push("Oluşturulan şifre en az sekiz karakterden oluşmalıdır.")}
     // if (this.data.password.length > 50) {this.errors.push("Oluşturulan şifre elli karakteri geçemez.")}
