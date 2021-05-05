@@ -15,7 +15,19 @@
   <header class="header-bar mb-3";>
     <div class="container d-flex flex-column flex-md-row align-items-center p-3">
       <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">Setream</a></h4>
-      
+      <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
+        <div class="row align-items-center">
+          <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
+            <input name="email" class="form-control form-control-sm input-dark" type="text" placeholder="E-posta adresi" autocomplete="off">
+          </div>
+          <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
+            <input name="password" class="form-control form-control-sm input-dark" type="password" placeholder="Şifre">
+          </div>
+          <div class="col-md-auto">
+            <button class="btn btn-primary btn-sm">Giriş yap</button>
+          </div>
+        </div>
+      </form>      
     </div>
   </header>
   
@@ -29,7 +41,7 @@
 
   <div class="row align-items-center">
     <div class="col-lg-7 py-3 py-md-5">    
-      <p class="lead text-muted">Beşeri tıbbi ürünlerin tanıtım faaliyetleri hakkındaki yönetmelik(Mart 2021) uyarınca canlı yayına katılabilmek için yandaki bilgileri doldurmanızı rica ederiz..</p>
+      <p class="lead text-muted">Canlı yayına girmek için lütfen kaydolunuz.</p>
     </div>
     <div class="col-lg-5 pl-lg-5 pb-3 py-lg-5">
       <form action="/register" method="POST" id="registration-form">
@@ -39,34 +51,40 @@
         <% }) %>
 
           <div class="form-group">
-            <label for="username-register" class="text-muted mb-1"><small> <h4>İsim Soyisim(Name-Surname)</h4> <p> </p><h6 style="color:tomato;"></h6>  </small></label>
+            <label for="username-register" class="text-muted mb-1"><small> <h4>İsim Soyisim</h4> <p> </p><h6 style="color:tomato;">Sorularınız kullanıcı adınız ile yayınlanacaktır!</h6>  </small></label>
             <input name="username" id="username-register" class="form-control" type="text" placeholder= "Örn: Ayşe Özer, Richard Kimble , Mehmet Yılmaz." autocomplete="off">
           </div>
+          
 
           <div class="form-group">
-            <label for="email-register" class="text-muted mb-1"><small><h4> E-Posta(E-Mail) </h4></small></label>
-            <input name="email" id="email-register" class="form-control" type="text" placeholder="E-Posta adresiniz" autocomplete="off">
+            <label for="email-register" class="text-muted mb-1"><small><h4>E-posta adresi </h4></small></label>
+            <input name="email" id="email-register" class="form-control" type="text" placeholder="E posta adresiniz" autocomplete="off">
           </div>
           
           <div class="form-group">
-            <label for="brans-register" class="text-muted mb-1"><small><h4> Branş(Speciality) </h4></small></label>
+            <label for="password-register" class="text-muted mb-1"><small><h4>Şifre</h4></small></label>
+            <input name="password" id="password-register" class="form-control" type="Şifre" placeholder="Şifre oluşturun">
+          </div>
+
+          <div class="form-group">
+            <label for="brans-register" class="text-muted mb-1"><small><h4> Branş </h4></small></label>
             <input name="brans" id="brans-register" class="form-control" type="text" placeholder="Branşınız" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="sehir-register" class="text-muted mb-1"><small><h4> Şehir(City) </h4></small></label>
+            <label for="sehir-register" class="text-muted mb-1"><small><h4> Şehir </h4></small></label>
             <input name="sehir" id="sehir-register" class="form-control" type="text" placeholder="Bulunduğunuz şehir" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="tckimlik-register" class="text-muted mb-1"><small><h4> T.C. Kimlik No </h4> </small></label>
+            <label for="tckimlik-register" class="text-muted mb-1"><small><h4> T.C. Kimlik No </h4></small></label>
             <input name="tckimlik" id="tckimlik-register" class="form-control" type="text" placeholder="T.C. Kimlik numaranız " autocomplete="off">
           </div>
 
           
           
           
-          <button type="submit" class="py-3 mt-4 btn btn-lg btn-success btn-block">Kayıt olun</button>
+          <button type="submit" class="py-3 mt-4 btn btn-lg btn-success btn-block">Setream'e kayıt olun.</button>
           
         </form>
       </div>

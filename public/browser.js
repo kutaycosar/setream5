@@ -7,7 +7,7 @@ document.addEventListener("click", function(e) {
         axios.post('/delete-item', {id: e.target.getAttribute("data-id")}).then(function () {
           e.target.parentElement.parentElement.remove()
         }).catch(function() {
-          console.log("Please try again later.")
+          console.log("daha sonra tekrar deneyin.")
         })
       }
     }
