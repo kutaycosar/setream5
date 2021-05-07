@@ -13,7 +13,7 @@ function passwordProtected(req, res, next){
 ///
 router.get('/', userController.welcome)
 router.get('/home', userController.home)
-router.post('/register',passwordProtected, userController.register)
+router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/logout', userController.logout)
 
