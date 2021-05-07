@@ -1,4 +1,33 @@
 
+/* cus */ 
+#main-container {
+  float:left;
+  width:100%;
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+
+.chapter{
+  position: relative;
+  height: 1400px;
+  z-index: 1;
+}
+
+#chapter1{
+background: url(http://omset.files.wordpress.com/2010/06/homer-simpson-1-264a0.jpg) 50% 0 no-repeat fixed;
+  height:1200px;
+}
+#chapter2{
+background: url(http://download.ultradownloads.com.br/wallpaper/94781_Papel-de-Parede-Homer-Simpson--94781_1680x1050.jpg) 50% 0 no-repeat fixed;
+  height:1200px;
+}
+#chapter1, #chatper2 {
+  background-size: cover;
+}
+
+/*  custom */ 
+
 .jumbotron{
   background-image: url(‘BN_webzemin.png’);
   background-size: cover;
