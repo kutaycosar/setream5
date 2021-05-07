@@ -65,6 +65,15 @@ app.get('/admin',passwordProtected, function(req,res){
   
 })
 
+app.get('/video', function(req,res){
+  
+  res.redirect('/home') 
+})
+
+app.get('/video2', function(req, res){
+  res.render('home-dashboard2.ejs')
+})
+
 app.post('/create-item',function(req,res){
   date = new Date()
   data = {

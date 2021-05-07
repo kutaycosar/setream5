@@ -60,6 +60,7 @@ User.prototype.login = function() {
     usersCollection.findOne({email: this.data.email}).then((attemptedUser) => {
       if (attemptedUser && bcrypt.compareSync(this.data.password, attemptedUser.password)) {
         this.data = attemptedUser
+        console.log(this.data, attemptedUser.password);
         this.getAvatar()
         resolve("Tebrikler!")
       } else {
