@@ -15,6 +15,7 @@ User.prototype.cleanUp = function() {
   if (typeof(this.data.brans) != "string") {this.data.brans = ""}
   if (typeof(this.data.sehir) != "string") {this.data.sehir = ""}
   if (typeof(this.data.tckimlik) != "string") {this.data.tckimlik = ""}
+  if (typeof(this.data.kurum) != "string") {this.data.kurum = ""}
 
   // get rid of any bogus properties
   this.data = {
@@ -23,7 +24,8 @@ User.prototype.cleanUp = function() {
     password: this.data.password,
     brans: this.data.brans,
     sehir: this.data.sehir,
-    tckimlik: this.data.tckimlik
+    tckimlik: this.data.tckimlik,
+    kurum: this.data.kurum
     
   }
 }
