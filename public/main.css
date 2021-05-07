@@ -1,29 +1,41 @@
+*{ margin:0;	padding:0;}
+* { font-family: "Arial", "Helvetica", Helvetica, sans-serif; }
 
-/* cus */ 
-#main-container {
-  float:left;
-  width:100%;
-  margin:0;
-  padding:0;
-  text-align: center;
+body {
+	-webkit-font-smoothing:antialiased; 
+	-webkit-text-size-adjust:none; 
+	width: 100%!important; 
+
+	color: #022527;
 }
 
-.chapter{
+
+.esercontainer {
+  height: 100%;
   position: relative;
-  height: 1400px;
-  z-index: 1;
+}
+.eserresponsive {
+  width: 100%;
+  height: auto;
 }
 
-#chapter1{
-background: url(http://omset.files.wordpress.com/2010/06/homer-simpson-1-264a0.jpg) 50% 0 no-repeat fixed;
-  height:1200px;
+.esercenter-left {
+	  width: 30%;
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  left: 30%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-#chapter2{
-background: url(http://download.ultradownloads.com.br/wallpaper/94781_Papel-de-Parede-Homer-Simpson--94781_1680x1050.jpg) 50% 0 no-repeat fixed;
-  height:1200px;
-}
-#chapter1, #chatper2 {
-  background-size: cover;
+
+.esercenter-right {
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  left: 70%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /*  custom */ 
