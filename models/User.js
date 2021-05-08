@@ -40,6 +40,7 @@ User.prototype.validate = function() {
     if (this.data.password.length > 50) {this.errors.push("Oluşturulan şifre elli karakteri geçemez.")}
     if (this.data.username.length > 0 && this.data.username.length < 3) {this.errors.push("Kullanıcı adı üç karakterden az olamaz.")}
     if (this.data.username.length > 50) {this.errors.push("Kullanıcı adı otuz karakteri geçemez.")}
+    if (this.data.tckimlik.length < 9 || this.data.tckimlik.length > 13) {this.errors.push("Geçerli bir T.C kimlik bilgisi girmelisiniz.")}
   
     // Only if username is valid then check to see if it's already taken
     // if (this.data.username.length > 2 && this.data.username.length < 31 && validator.isAlphanumeric(this.data.username)) {
