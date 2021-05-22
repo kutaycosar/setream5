@@ -8,15 +8,27 @@ let User = function(data) {
   this.errors = []
 }
 
-let tcValid = function(tc){
-  var sonuc = false;
-  if(tc.length !== 11){
-    sonuc = false;
-  }else if(isNaN(tc.value)){
-    sonuc = false;
+/*TC Kimlik Kontrol*/
+let TCKimlikKOntrol = function(deger) {
+  deger = deger.toString();
+  var basamak = /^[0-9]{11}$/.test(deger);
+  var toplamX = 0;
+  for (var i = 0; i < 10; i++) {
+      toplamX += Number(deger.substr(i, 1));
   }
-  return sonuc
-}
+  var kuralX = toplamX % 10 == deger.substr(10,1);
+  var toplamY = 0;
+  var toplamY = 0;
+  for (var i = 0; i < 10; i+=2) {
+      toplamY += Number(deger.substr(i, 1));
+  }
+  for (var i = 1; i < 10; i+=2) {
+      toplamY += Number(deger.substr(i, 1));
+  }
+  var kuralY = ((toplamY * 7) - toplamY) % 10 == deger.substr(9,0);
+  return basamak && kuralX && kuralY;
+  };
+  /*TC Kimlik Kontrol*/
 
 User.prototype.cleanUp = function() {
   if (typeof(this.data.username) != "string") {this.data.username = ""}
@@ -51,7 +63,11 @@ User.prototype.validate = function() {
     if (this.data.username.length > 0 && this.data.username.length < 3) {this.errors.push("Kullanıcı adı üç karakterden az olamaz.")}
     if (this.data.username.length > 50) {this.errors.push("Kullanıcı adı otuz karakteri geçemez.")}
     // if (this.data.tckimlik.length < 9 || this.data.tckimlik.length > 13) {this.errors.push("Geçerli bir T.C kimlik bilgisi girmelisiniz.")}
-    if(tcValid(this.data.tckimlik)) {this.errors.push("gecerli bi tc kimlik girin")}
+    if(!TCKimlikKOntrol(this.data.tckimlik)) {this.errors.push("Geçersiz bir T.C kimlik numarası girdiniz.")}
+    if (this.data.brans == "") {this.errors.push("Branş girmelisiniz.")}
+    if (this.data.kurum == "") {this.errors.push("Kurum girmelisiniz.")}
+    if (this.data.sehir == "") {this.errors.push("Şehir girmelisiniz.")}
+    
   
     // Only if username is valid then check to see if it's already taken
     // if (this.data.username.length > 2 && this.data.username.length < 31 && validator.isAlphanumeric(this.data.username)) {
