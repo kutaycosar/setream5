@@ -15,20 +15,7 @@
   <header style="background-color: white;" class="header-bar mb-3";>
     <div class="container d-flex flex-column flex-md-row align-items-center p-3">
       <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white"><img class="font-weight-normal img-fluid " alt="Responsive image" width="300" height="150" src="BNTlogoleftarea.png"></a></h4>
-      <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
-        <div class="row align-items-center">
-          
-          <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
-            <input name="email" class="form-control form-control-sm " type="text" placeholder="E-posta adresi" autocomplete="off">
-          </div>
-          <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
-            <input name="password" class="form-control form-control-sm " type="password" placeholder="Şifre">
-          </div>
-          <div class="col-md-auto">
-            <button class="btn btn-primary btn-sm">Giriş yap</button>
-          </div>
-        </div>
-      </form>      
+         
     </div>
   </header>
   
@@ -41,16 +28,41 @@
   <% }) %>
 
   <div class="row align-items-center">
-    <div class="col-lg-7 py-3 py-md-5">    
+     
+    <div class="col-lg-7 py-3 py-md-5"> 
+       <!-- #region  login giris -->
+    <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
+    
+      <h6 style="text-align: center; color: darkred; font-size: 15px;">Kayıt olduysanız, kayıt olurken kullanmış olduğunuz e-posta adresi ve belirlediğiniz 4 haneli şifre ile giriş yapabilirsiniz.</h4>
+      <div class="row align-items-center">
+       
+        
+        <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
+          <input name="email" class="form-control form-control-sm " type="text" placeholder="E-posta adresi" autocomplete="off">
+        </div>
+        <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
+          <input name="password" class="form-control form-control-sm " type="password" placeholder="Şifre">
+        </div>
+        <div class="col-md-auto">
+          <button class="btn btn-primary btn-sm">Giriş yap</button>
+        </div>
+      </div>
+    </form>   
+    <p></p>
+    <br style="margin: 18px 0;">
+    <!-- #endregion login giris-->   
       <img class=" font-weight-normal img-fluid " alt="Responsive image" width="1200" height="170" src="BN_form_gorsel2 (1).png">
     </div>
+    
     <div class="col-lg-5 pl-lg-5 pb-3 py-lg-5">
+      <h6 style="text-align: center; color: darkred; font-size: 15px;">Kayıt olmadıysanız aşağıda yer alan formu doldurarak kayıt olmanızı rica ederiz.</h4>
+        
       <form action="/register" method="POST" id="registration-form">
 
         <% regErrors.forEach(function(message) { %>
           <div class="alert alert-danger small"><%= message %></div>
         <% }) %>
-
+          
           <div class="form-group">
             <label for="username-register" class="text-muted mb-1"><small> <h5>İsim Soyisim</h5> <p> </p><h6 style="color:tomato;"></h6>  </small></label>
             <input name="username" id="username-register" class="form-control" type="text" placeholder= "Örn: Ayşe Özer" autocomplete="off">
@@ -93,6 +105,7 @@
           <button type="submit" class="py-3 mt-4 btn btn-lg btn-primary btn-block">Kayıt ol</button>
           
         </form>
+        <br style="margin: 49px 0;">
       </div>
     </div>
   </div>
