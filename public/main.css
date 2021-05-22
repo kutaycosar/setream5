@@ -126,6 +126,12 @@ body, .tooltip
 .input-dark:-ms-input-placeholder {color: #888;}
 .input-dark:-moz-placeholder {color: #888;}
 
+::placeholder {
+  color: peachpuff;
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .display-3 {
   font-size: 4.35rem;
 }
@@ -158,6 +164,16 @@ body, .tooltip
 .form-group textarea {
   position: relative;
   z-index: 2;
+  
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+label {
+  margin: 1px 0px;
+        display: block;
 }
 
 textarea.tall-textarea {
