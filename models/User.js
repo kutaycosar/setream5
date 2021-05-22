@@ -9,25 +9,25 @@ let User = function(data) {
 }
 
 /*TC Kimlik Kontrol*/
-let TCKimlikKOntrol = function(deger) {
-  deger = deger.toString();
-  var basamak = /^[0-9]{11}$/.test(deger);
-  var toplamX = 0;
-  for (var i = 0; i < 10; i++) {
-      toplamX += Number(deger.substr(i, 1));
+function tcKontrol(tc){
+  if(tc.substr(0,1)==0 || tc.length!=11){
+    return false;
   }
-  var kuralX = toplamX % 10 == deger.substr(10,1);
-  var toplamY = 0;
-  var toplamY = 0;
-  for (var i = 0; i < 10; i+=2) {
-      toplamY += Number(deger.substr(i, 1));
+  var i = 9, md='', mc='', digit, mr='';
+  while(digit = tc.charAt(--i)){
+    i%2==0 ? md += digit : mc += digit;
   }
-  for (var i = 1; i < 10; i+=2) {
-      toplamY += Number(deger.substr(i, 1));
+  if(((eval(md.split('').join('+'))*7)-eval(mc.split('').join('+')))%10!=parseInt(tc.substr(9,1),10)){
+    return false;
   }
-  var kuralY = ((toplamY * 7) - toplamY) % 10 == deger.substr(9,0);
-  return basamak && kuralX && kuralY;
-  };
+  for (c=0;c<=9;c++){
+    mr += tc.charAt(c);
+  }
+  if(eval(mr.split('').join('+'))%10!=parseInt(tc.substr(10,1),10)){
+    return false;
+  }
+  return true;
+}
   /*TC Kimlik Kontrol*/
 
 User.prototype.cleanUp = function() {
@@ -63,7 +63,7 @@ User.prototype.validate = function() {
     if (this.data.username.length > 0 && this.data.username.length < 3) {this.errors.push("Kullanıcı adı üç karakterden az olamaz.")}
     if (this.data.username.length > 50) {this.errors.push("Kullanıcı adı otuz karakteri geçemez.")}
     // if (this.data.tckimlik.length < 9 || this.data.tckimlik.length > 13) {this.errors.push("Geçerli bir T.C kimlik bilgisi girmelisiniz.")}
-    if(!TCKimlikKOntrol(this.data.tckimlik)) {this.errors.push("Geçersiz bir T.C kimlik numarası girdiniz.")}
+    if (!tcKontrol(this.data.tckimlik)) {this.errors.push("Geçerli bir T.C kimlik numarası girmelisiniz.")}
     if (this.data.brans == "") {this.errors.push("Branş girmelisiniz.")}
     if (this.data.kurum == "") {this.errors.push("Kurum girmelisiniz.")}
     if (this.data.sehir == "") {this.errors.push("Şehir girmelisiniz.")}
