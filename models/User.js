@@ -47,7 +47,8 @@ User.prototype.cleanUp = function() {
     brans: this.data.brans,
     sehir: this.data.sehir,
     tckimlik: this.data.tckimlik,
-    kurum: this.data.kurum
+    kurum: this.data.kurum,
+    checkbox: this.data.checkbox
     
   }
 }
@@ -67,6 +68,7 @@ User.prototype.validate = function() {
     if (this.data.brans == "") {this.errors.push("Branş girmelisiniz.")}
     if (this.data.kurum == "") {this.errors.push("Kurum girmelisiniz.")}
     if (this.data.sehir == "") {this.errors.push("Şehir girmelisiniz.")}
+    if (this.data.checkbox != "onaylandi") {this.errors.push("KVKK metini onaylamanız gerekiyor.")}
     
   
     // Only if username is valid then check to see if it's already taken
@@ -109,7 +111,7 @@ User.prototype.register = function() {
   
     // Step #2: Only if there are no validation errors 
     // then save the user data into a database
-    if (!this.errors.length) {
+    if (!this.errors.length && this.data.checkbox == "onaylandi") {
       // hash user password
       let salt = bcrypt.genSaltSync(10)
       this.data.password = bcrypt.hashSync(this.data.password, salt)
