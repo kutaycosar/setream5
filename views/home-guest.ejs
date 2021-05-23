@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <header style="background-color: white;" class="header-bar mb-3";>
+  <header style="background-color: white; box-shadow: 0 8px 2px -2px gray;" class="header-bar mb-3";>
     <div class="container d-flex flex-column flex-md-row align-items-center p-3">
       <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white"><img class="font-weight-normal img-fluid " alt="Responsive image" width="100" height="50" src="gunceltip_logo_header.png"></a></h4>
       <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white"><img class="font-weight-normal img-fluid " alt="Responsive image" width="300" height="150" src="BNTlogoleftarea.png"></a></h4>
@@ -35,7 +35,7 @@
        <!-- #region  login giris -->
     <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
     
-      <h6 style="text-align: center; color: darkred; font-size: 15px;">Kayıt olduysanız, kayıt olurken kullanmış olduğunuz e-posta adresi ve belirlediğiniz 4 haneli şifre ile giriş yapabilirsiniz.</h4>
+      <h6 style="text-align: center; color: #e20613; font-size: 15px;">Kayıt olduysanız, kayıt olurken kullanmış olduğunuz e-posta adresi ve belirlediğiniz 4 haneli şifre ile giriş yapabilirsiniz.</h4>
       <div class="row align-items-center">
        
         
@@ -57,7 +57,7 @@
     </div>
     
     <div class="col-lg-5 pl-lg-5 pb-3 py-lg-5">
-      <h6 style="text-align: center; color: darkred; font-size: 15px;">Kayıt olmadıysanız aşağıda yer alan formu doldurarak kayıt olmanızı rica ederiz.</h4>
+      <h6 style="text-align: center; color: #e20613; font-size: 15px;">Kayıt olmadıysanız aşağıda yer alan formu doldurarak kayıt olmanızı rica ederiz.</h4>
         
       <form action="/register" method="POST" id="registration-form">
 
@@ -66,40 +66,41 @@
         <% }) %>
           
           <div class="form-group">
-            <label for="username-register" class="text-muted mb-1"><small> <h5 style="font-size: 15px;">İsim Soyisim</h5> <p> </p><h6 style="color:tomato;"></h6>  </small></label>
+            <label for="username-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span> İsim Soyisim</h5></small></label>
             <input name="username" id="username-register" class="form-control" type="text" placeholder= "Örn: Ayşe Özer" autocomplete="off">
           </div>
           
 
           <div class="form-group">
-            <label for="email-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;">E-posta adresi </h5></small></label>
+            <label for="email-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span>E-posta adresi </h5></small></label>
             <input name="email" id="email-register" class="form-control" type="text" placeholder="E posta adresiniz" autocomplete="off">
           </div>
           
           <div class="form-group">
-            <label for="password-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;">Şifre</h5></small></label>
-            <input name="password" id="password-register" class="form-control" type="Şifre" placeholder="Şifre oluşturun">
+            <label for="password-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span>Şifre</h5></small></label>
+            <input name="password" id="password-register" class="form-control" type="Şifre" placeholder="Şifre oluşturun: Şifreniz 4 haneli olmalıdır.">
           </div>
 
           <div class="form-group">
-            <label for="brans-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;"> Branş </h5></small></label>
+            <label for="brans-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span> Branş </h5></small></label>
             <input name="brans" id="brans-register" class="form-control" type="text" placeholder="Branşınız" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="kurum-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;"> Kurum </h5></small></label>
+            <label for="kurum-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span>Kurum </h5></small></label>
             <input name="kurum" id="kurum-register" class="form-control" type="text" placeholder="Kurumunuz" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="sehir-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;"> Şehir </h5></small></label>
+            <label for="sehir-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span>Şehir </h5></small></label>
             <input name="sehir" id="sehir-register" class="form-control" type="text" placeholder="Bulunduğunuz şehir" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="tckimlik-register" class="text-muted mb-1"><small><h5 style="font-size: 13px;"> T.C. Kimlik No </h5></small></label>
+            <label for="tckimlik-register" class="text-muted mb-1"><small><h5 style="font-size: 15px;"><span style="color: red;">*</span>T.C. Kimlik No </h5></small></label>
             <input name="tckimlik" id="tckimlik-register" class="form-control" type="text" placeholder="T.C. Kimlik numaranız " autocomplete="off">
           </div>
+          <p></p>
           <input style="transform: scale(1.4);" id="checkbox-register" type="checkbox" name="checkbox" value="onaylandi"/> <a href="kvkk.pdf" target="_blank" rel="noopener noreferrer">
             KVKK metnini okudum ve kabul ediyorum
           </a></input>
@@ -107,7 +108,7 @@
           <button type="submit" class="py-3 mt-4 btn btn-lg btn-primary btn-block">Kayıt ol</button>
           
         </form>
-        <img style="height: 276px; " src="Empty.png" alt="">
+        <img style="height: 253px; " src="Empty.png" alt="">
       </div>
     </div>
   </div>
