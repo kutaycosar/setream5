@@ -128,7 +128,7 @@ body, .tooltip
 
 ::placeholder {
   color: peachpuff;
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -168,7 +168,8 @@ body, .tooltip
 }
 
 .form-group {
-  margin-bottom: 0px;
+  margin-bottom: 12px;
+  margin-top: 0px;
 }
 
 label {
