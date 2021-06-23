@@ -67,7 +67,7 @@ app.get('/admin',passwordProtected, function(req,res){
 //karsilama.ejs modal in gidecegi sayfa
 app.get('/video', function(req,res){
   
-  res.render('program.ejs') 
+  res.redirect('/home')
 })
 
 app.get('/video2', function(req, res){
