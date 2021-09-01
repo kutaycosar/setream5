@@ -65,10 +65,10 @@ app.get('/admin',passwordProtected, function(req,res){
   
 })
 
-//karsilama.ejs modal in gidecegi sayfa
+//karsilama.ejs modal in gidecegi sayfa . normal calismasi icin icinde olani silip sadece yaz: res.redirect('/home');  
 app.get('/video', function(req,res){
   
-  res.redirect('/home')
+  res.render('home-dashboard2.ejs')
 })
 
 app.get('/video2', function(req, res){
