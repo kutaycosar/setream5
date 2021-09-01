@@ -87,30 +87,30 @@ function ChangeSource(Button){
     } 
     }
 
-document.getElementById("create-form").addEventListener("submit", function(e){
-  validation()
-  console.log(errors.length)
-  console.log(errors)
-    if (errors.length == 0) {
-    errors = []
-    e.preventDefault()
-    alertTimeoutSuccess("Yorumunuz gönderildi", 1100)
-    axios.post('/create-item', {text2: createField2.value}).then(function () {
-      createField2.value = ""
-      createField2.focus()
-      }).catch(function() {
-      console.log("Please try again later.")
-      })
-  }else{
-    errors = []
-    e.preventDefault()
-    alertTimeoutFail("Gönderim başarısız." ,3000)
-    createField2.value = ""
-    createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
-    createField2.focus()
-  }
+// document.getElementById("create-form").addEventListener("submit", function(e){
+//   validation()
+//   console.log(errors.length)
+//   console.log(errors)
+//     if (errors.length == 0) {
+//     errors = []
+//     e.preventDefault()
+//     alertTimeoutSuccess("Yorumunuz gönderildi", 1100)
+//     axios.post('/create-item', {text2: createField2.value}).then(function () {
+//       createField2.value = ""
+//       createField2.focus()
+//       }).catch(function() {
+//       console.log("Please try again later.")
+//       })
+//   }else{
+//     errors = []
+//     e.preventDefault()
+//     alertTimeoutFail("Gönderim başarısız." ,3000)
+//     createField2.value = ""
+//     createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
+//     createField2.focus()
+//   }
   
-})
+// })
 
 document.getElementById("gonder").addEventListener("click",function(e){
   //changeStream code
