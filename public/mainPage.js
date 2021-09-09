@@ -122,55 +122,6 @@ document.getElementById("gonder").addEventListener("click",function(e){
 
 //sorucevap 
 //home-dashboard.ejs deki modal , sik sectiginde db de sorucevap collectiona kaydediyor bu pop up u tum kullanicilarda cikarmak istiyorum . app. js de 97.satir da post atiyor burdaki 127.satirdan sonra
-document.getElementById("cevap").addEventListener("click", function(e){
-    if (e.target.classList.contains("aCevap")) {if (confirm("ss")) {
-      axios.post('/soru-cevapla', {cevap: "a"}).then(function () {
-      
-      }).catch(function() {
-        console.log("sonra tekrar deneyin.")
-      })
-    }
-
-    
-    }
-
-    else if (e.target.classList.contains("bCevap")) {if (confirm("ss")) {
-      axios.post('/soru-cevapla', {cevap: "b"}).then(function () {
-        
-      }).catch(function() {
-        console.log("sonra tekrar deneyin.")
-      })
-    }
-
-    
-    }
-
-    else if (e.target.classList.contains("cCevap")) {if (confirm("ss")) {
-      axios.post('/soru-cevapla', {cevap: "c"}).then(function () {
-       
-      }).catch(function() {
-        console.log("sonra tekrar deneyin.")
-      })
-    }
-
-    
-    }
-
-    else if (e.target.classList.contains("dCevap")) {if (confirm("ss")) {
-      axios.post('/soru-cevapla', {cevap: "d"}).then(function () {
-   
-      }).catch(function() {
-        console.log("sonra tekrar deneyin.")
-      })
-    }
-
-    
-    }
-  }
-
-  
-
-)
 
 
 

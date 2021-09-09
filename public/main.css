@@ -434,3 +434,7 @@ textarea.tall-textarea {
   outline: none;
   font-size: .75rem;
 }
+
+#quizAppFrame{
+  position:fixed; top:0; left:0; width: 100vw; height:100vh; background: transparent; overflow: hidden;z-index: 99999; display: none;
+}
