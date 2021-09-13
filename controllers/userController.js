@@ -46,7 +46,6 @@ exports.home = function(req, res) {
     res.render('home-guest', {errors: req.flash('errors'), regErrors: req.flash('regErrors')})
   }
 }
-
 exports.welcome = function(req, res){
   res.render('karsilama.ejs')
 }
